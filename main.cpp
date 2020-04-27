@@ -18,7 +18,7 @@ TEST_CASE("Point Tests")
 		{
 			Point p(1,7);
 			Point p2(1.7, 1.4);
-			Point p3();
+			Point p3;
 
 			SUCCEED();
 		}
@@ -33,9 +33,19 @@ TEST_CASE("Point Tests")
         REQUIRE_THROWS(Point(-2.4, 1.0));
         REQUIRE_THROWS(Point(3.4, -2.1));
         REQUIRE_THROWS(Point(-2.7, -7.8));
-        REQUIRE_THROWS(Point(1.2, 2.4));
     }
 
+    SECTION("Test String Representation")
+    {
+        Point p(2.3, 3.4);
+        REQUIRE("X: 2.300000, Y: 3.400000" == p.toString());
+
+        Point p2;
+        REQUIRE("X: 0.000000, Y: 0.000000" == p2.toString());
+
+        Point p3(1,2);
+        REQUIRE("X: 1.000000, Y: 2.000000" == p3.toString());
+    }
 
     system("pause");
 
