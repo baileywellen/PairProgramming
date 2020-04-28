@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Point.h"
+#include "Line.h"
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 //#define CATCH_CONFIG_RUNNER
@@ -46,6 +47,21 @@ TEST_CASE("Point Tests")
         Point p3(1,2);
         REQUIRE("X: 1.000000, Y: 2.000000" == p3.toString());
     }
+	SECTION("Test Line Class")
+	{
+		try {
+			Line l1;
+			Line l2(1, 2, 3, 4);
+
+			SUCCEED();
+			
+		}
+		catch(...)
+		{
+			FAIL();
+		}
+		
+	}
 
     system("pause");
 

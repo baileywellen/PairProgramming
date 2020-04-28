@@ -13,7 +13,7 @@ Point::Point(double x_val, double y_val)
     {
         throw "Only values in the first quadrant allowed";
     }
-    x = x_val;
+    x = x_val; 
     y = y_val;
 }
  
