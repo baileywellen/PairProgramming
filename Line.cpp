@@ -26,7 +26,12 @@ string Line::LineToString()
 
 double Line::length()
 {
-	//double x_minus=
-	return 0.0;
+	double x_minus = A.getX() - B.getX();
+	double y_minus = A.getY() - B.getY();
+
+	double distance = sqrt(pow(x_minus, 2) + pow(y_minus, 2));
+
+	
+	return distance;
 }
 

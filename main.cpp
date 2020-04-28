@@ -82,8 +82,8 @@ TEST_CASE("Point Tests")
 	}
 	SECTION("Test line.length()")
 	{
-		/*Line l1(1, 2, 3, 4);
-		REQUIRE(l1.length() == 1);*/
+		Line l1(1, 1, 2, 2);
+		REQUIRE(l1.length() == sqrt(2));
 
 	}
 
