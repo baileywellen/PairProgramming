@@ -46,7 +46,20 @@ TEST_CASE("Point Tests")
 
         Point p3(1,2);
         REQUIRE("X: 1.000000, Y: 2.000000" == p3.toString());
+		
+	
     }
+
+
+	SECTION("Test member functions")
+	{
+		Point p4(4.0, 5.0);
+		REQUIRE(p4.getX() == 4.0);
+		REQUIRE(p4.getY() == 5.0);
+	}
+
+
+
 	SECTION("Test Line Class Constructors")
 	{
 		try {
@@ -66,6 +79,11 @@ TEST_CASE("Point Tests")
 		Line l1(1,2,3,4);
 		REQUIRE_THROWS(Line(-1, 2, 3, 4));
 		REQUIRE(l1.LineToString() == "Point 1: [X: 1.000000, Y: 2.000000], Point 2: [X: 3.000000, Y: 4.000000]");
+	}
+	SECTION("Test line.length()")
+	{
+		/*Line l1(1, 2, 3, 4);
+		REQUIRE(l1.length() == 1);*/
 
 	}
 

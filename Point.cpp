@@ -22,3 +22,13 @@ Point::Point(double x_val, double y_val)
      string ret_val = "X: " + to_string(x) + ", Y: " + to_string(y);
      return ret_val;
  }
+
+ double Point::getX()
+ {
+	 return x;
+ }
+
+ double Point::getY()
+ {
+	 return y;
+ }

@@ -12,5 +12,7 @@ public:
     Point();
     Point(double x_val, double y_val);
     string toString();
+	double getX();
+	double getY();
 
 };

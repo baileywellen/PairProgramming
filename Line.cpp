@@ -23,3 +23,10 @@ string Line::LineToString()
 
 	return  retval;
 }
+
+double Line::length()
+{
+	//double x_minus=
+	return 0.0;
+}
+
