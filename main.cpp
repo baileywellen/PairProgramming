@@ -47,12 +47,12 @@ TEST_CASE("Point Tests")
         Point p3(1,2);
         REQUIRE("X: 1.000000, Y: 2.000000" == p3.toString());
     }
-	SECTION("Test Line Class")
+	SECTION("Test Line Class Constructors")
 	{
 		try {
 			Line l1;
 			Line l2(1, 2, 3, 4);
-
+	
 			SUCCEED();
 			
 		}
@@ -60,7 +60,13 @@ TEST_CASE("Point Tests")
 		{
 			FAIL();
 		}
-		
+	}
+	SECTION("Test Negative Line Input")
+	{
+		Line l1(1,2,3,4);
+		REQUIRE_THROWS(Line(-1, 2, 3, 4));
+		REQUIRE(l1.LineToString() == "Point 1: [X: 1.000000, Y: 2.000000], Point 2: [X: 3.000000, Y: 4.000000]");
+
 	}
 
     system("pause");
