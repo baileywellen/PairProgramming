@@ -100,8 +100,18 @@ TEST_CASE("Point Tests")
 
 		REQUIRE(l1.IsParallel(Line(1, 3, 2, 5)) == false);
 
-	}
 
+	}
+	SECTION("Test line.Intersect()") {
+
+		Line l1(1, 1, 10, 10);
+		Line l2(1, 10, 10, 1);
+
+		REQUIRE(l1.Intersect(l2) == true);
+		REQUIRE(l1.Intersect(l1) == true);
+		REQUIRE(l1.Intersect(Line(2, 2, 11, 11)) == false);
+
+	}
     system("pause");
 
     

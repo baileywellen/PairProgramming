@@ -14,4 +14,5 @@ public:
 	double length();
 	bool IsPointOnLine(Point pt);
 	bool IsParallel(Line ln);
+	bool Intersect(Line ln);
 };

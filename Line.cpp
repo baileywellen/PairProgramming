@@ -63,4 +63,14 @@ bool Line::IsParallel(Line ln) {
 
 	return retVal;
 }
+bool Line::Intersect(Line ln) {
+
+	bool retVal = false;
+
+	//Code is still needed here
+
+
+	return retVal;
+
+}
 
