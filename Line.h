@@ -3,7 +3,7 @@
 #include "Point.h"
 
 class Line {
-private:
+protected:
 Point A;
 Point B;
 

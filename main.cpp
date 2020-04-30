@@ -98,6 +98,8 @@ TEST_CASE("Point Tests")
 		Line l1(1, 1, 3, 3);
 		REQUIRE(l1.IsParallel(Line(2, 2, 3, 3)) == true);
 
+		REQUIRE(l1.IsParallel(Line(1, 3, 2, 5)) == false);
+
 	}
 
     system("pause");

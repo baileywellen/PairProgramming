@@ -52,7 +52,15 @@ bool Line::IsPointOnLine(Point pt) {
 
 bool Line::IsParallel(Line ln) {
 
+	bool retVal = false;
 
-	return false;
+	double slope1 = (B.getY() - A.getY()) / (B.getX() - A.getX());
+	double slope2 = (ln.B.getY() - ln.A.getY()) / (ln.B.getX() - ln.A.getX());
+
+	if (slope1 == slope2) {
+		retVal = true;
+	}
+
+	return retVal;
 }
 
