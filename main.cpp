@@ -86,6 +86,19 @@ TEST_CASE("Point Tests")
 		REQUIRE(l1.length() == sqrt(2));
 
 	}
+	SECTION("Test line.IsPointOnLine()") {
+
+		Line l1(1, 1, 3, 3);
+		REQUIRE(l1.IsPointOnLine(Point(2, 2)) == true);
+
+		REQUIRE(l1.IsPointOnLine(Point(1, 2)) == false);
+	}
+	SECTION("Test line.IsParallel()") {
+
+		Line l1(1, 1, 3, 3);
+		REQUIRE(l1.IsParallel(Line(2, 2, 3, 3)) == true);
+
+	}
 
     system("pause");
 

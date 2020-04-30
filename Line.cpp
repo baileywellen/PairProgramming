@@ -34,4 +34,25 @@ double Line::length()
 	
 	return distance;
 }
+bool Line::IsPointOnLine(Point pt) {
+
+	bool retVal = false;
+
+	Line l1(A.getX(), A.getY(), pt.getX(), pt.getY());
+	Line l2(B.getX(), B.getY(), pt.getX(), pt.getY());
+
+	if (l1.length() + l2.length() == length()) {
+
+		retVal = true;
+	}
+
+	return retVal;
+
+}
+
+bool Line::IsParallel(Line ln) {
+
+
+	return false;
+}
 
