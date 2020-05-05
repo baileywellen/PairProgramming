@@ -6,6 +6,9 @@ class Line {
 protected:
 Point A;
 Point B;
+double getSlope();
+double getYIntercept();
+
 
 public:
 	Line();
@@ -13,7 +16,6 @@ public:
 	string LineToString();
 	double length();
 	bool IsPointOnLine(Point pt);
-    double getSlope();
 	bool IsParallel(Line ln);
 	bool Intersect(Line ln);
 };

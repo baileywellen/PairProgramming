@@ -73,12 +73,32 @@ bool Line::IsParallel(Line ln) {
 
 	return retVal;
 }
+double Line::getYIntercept()
+{
+    //y = mx + b 
+    //b = y - mx
+    double retVal = A.getY() - (this->getSlope() * A.getX());
+    return retVal;
+}
+
 bool Line::Intersect(Line ln) {
 
 	bool retVal = false;
 
-	//Code is still needed here
+    //get y intercepts 
+    if(ln.getSlope() == double(INT_MAX))
+    {
+        //if both lines are vertical
+        if(this->getSlope() == double(INT_MAX))
+        {
+            //unfinished code
+        }
+    }
+    //check if it is parallel
 
+    //if not parallel, find intersection of extended lines
+
+    //check if intersection is within bounds of line segments 
 
 	return retVal;
 
