@@ -13,6 +13,7 @@ public:
 	string LineToString();
 	double length();
 	bool IsPointOnLine(Point pt);
+    double getSlope();
 	bool IsParallel(Line ln);
 	bool Intersect(Line ln);
 };

@@ -49,15 +49,25 @@ bool Line::IsPointOnLine(Point pt) {
 	return retVal;
 
 }
+double Line::getSlope()
+{
+    double retVal = double(INT_MAX);
+    //if it is not a vertical line, we will find the slope
+    if(B.getX() - A.getX() != 0)
+    {
+        retVal = (B.getY() - A.getY()) / (B.getX() - A.getX());
+    }
+    return retVal;
+}
 
 bool Line::IsParallel(Line ln) {
 
 	bool retVal = false;
 
-	double slope1 = (B.getY() - A.getY()) / (B.getX() - A.getX());
-	double slope2 = (ln.B.getY() - ln.A.getY()) / (ln.B.getX() - ln.A.getX());
-
-	if (slope1 == slope2) {
+	double slope1 = this->getSlope();
+	double slope2 = ln.getSlope();
+    
+    if (slope1 == slope2) {
 		retVal = true;
 	}
 

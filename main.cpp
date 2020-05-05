@@ -93,6 +93,20 @@ TEST_CASE("Point Tests")
 
 		REQUIRE(l1.IsPointOnLine(Point(1, 2)) == false);
 	}
+    SECTION("Test getSlope()")
+    {
+        Line l1(1,1,2,2);
+        REQUIRE(l1.getSlope() == 1);
+
+        Line l2(1,1,1,4);
+        REQUIRE(l2.getSlope() == double(INT_MAX));
+
+        Line l3(1,1,3,1);
+        REQUIRE(l3.getSlope() == 0);
+
+        Line l4(4,4,8,0);
+        REQUIRE(l4.getSlope() == -1);
+    }
 	SECTION("Test line.IsParallel()") {
 
 		Line l1(1, 1, 3, 3);
