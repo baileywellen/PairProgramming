@@ -7,7 +7,6 @@
 using namespace std;
 
 
-
 TEST_CASE("Point Tests")
 {
 	//setup code
@@ -87,8 +86,8 @@ TEST_CASE("Point Tests")
 	{
 		Line l1(1, 2, 3, 4);
 		REQUIRE(l1.LineToString() == "Point 1: [X: 1.000000, Y: 2.000000], Point 2: [X: 3.000000, Y: 4.000000]");
-	//	Line l2(3, 4, 1, 2);
-	//	REQUIRE(l2.LineToString() == "Point 1: [X: 1.000000, Y: 2.000000], Point 2: [X: 3.000000, Y: 4.000000]");
+		Line l2(3, 4, 1, 2);
+		REQUIRE(l2.LineToString() == "Point 1: [X: 1.000000, Y: 2.000000], Point 2: [X: 3.000000, Y: 4.000000]");
 	}
 	SECTION("Test line.length()")
 	{
@@ -133,7 +132,16 @@ TEST_CASE("Point Tests")
 
 		REQUIRE(l1.Intersect(l2) == true);
 		REQUIRE(l1.Intersect(l1) == true);
-		REQUIRE(l1.Intersect(Line(2, 2, 11, 11)) == false);
+		REQUIRE(l1.Intersect(Line(1 , 2, 10, 11)) == false);
+		REQUIRE(l1.Intersect(Line(1, 10, 4, 6)) == false);
+		
+		Line l3(2, 1, 2, 10);
+		Line l4(3, 3, 8, 6);
+		REQUIRE(l3.Intersect(l4) == false);
+		REQUIRE(l4.Intersect(l3) == false);
+		REQUIRE(l3.Intersect(l1) == true);
+
+
 
 	}
     system("pause");

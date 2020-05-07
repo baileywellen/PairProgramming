@@ -1,4 +1,7 @@
 #include "Line.h"
+#include <iostream>
+
+using namespace std;
 
 
 Line::Line()
@@ -81,22 +84,53 @@ bool Line::IsParallel(Line ln) {
 
 	return retVal;
 }
-double Line::getYIntercept()
-{
-    //y = mx + b 
-    //b = y - mx
-    double retVal = A.getY() - (this->getSlope() * A.getX());
-    return retVal;
-}
 
 bool Line::Intersect(Line ln) {
 
 	bool retVal = false;
 
-//	for(int i =0; i < )
+	double x = A.getX();
+	double y = A.getY();
+	double slope = getSlope();
+	
+	if(slope == INT_MAX){
 
 
+		while(y <= B.getY()){
 
+			Point mark(x,y);
+			if(ln.IsPointOnLine(mark)){
+
+				cout << "The x is: " << x << "     and y is: " << y << endl;
+				cout << "B.getX() is: " << B.getX() << endl;
+				cout << "The slope is: " << slope << endl << endl;
+				retVal = true;
+				break;
+			}
+			
+			y += (1.0/10000);
+		}
+		
+	}
+	else{
+
+		while(x <= B.getX()){
+
+			Point mark(x,y);
+			if(ln.IsPointOnLine(mark)){
+
+				cout << "The x is: " << x << "     and y is: " << y << endl;
+				cout << "B.getX() is: " << B.getX() << endl;
+				cout << "The slope is: " << slope << endl << endl;
+				retVal = true;
+				break;
+			}
+			
+			x += 1.0/10000;
+			y += slope * (1.0/10000);
+			
+		}
+	}
 
 	return retVal;
 

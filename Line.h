@@ -17,5 +17,4 @@ public:
 	bool IsParallel(Line ln);
 	bool Intersect(Line ln);
 	double getSlope();
-	double getYIntercept();
 };
