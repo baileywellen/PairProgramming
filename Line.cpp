@@ -8,8 +8,16 @@ Line::Line()
 }
 Line::Line(double x1, double y1, double x2, double y2)
 {
-	A = Point(x1, y1);
-	B = Point(x2, y2);
+	if (x1 <= x2)
+	{
+		A = Point(x1, y1);
+		B = Point(x2, y2);
+	}
+	else
+	{
+		A = Point(x2, y2);
+		B = Point(x1, y1);
+	}
 }
 
 string Line::LineToString()
@@ -85,20 +93,10 @@ bool Line::Intersect(Line ln) {
 
 	bool retVal = false;
 
-    //get y intercepts 
-    if(ln.getSlope() == double(INT_MAX))
-    {
-        //if both lines are vertical
-        if(this->getSlope() == double(INT_MAX))
-        {
-            //unfinished code
-        }
-    }
-    //check if it is parallel
+//	for(int i =0; i < )
 
-    //if not parallel, find intersection of extended lines
 
-    //check if intersection is within bounds of line segments 
+
 
 	return retVal;
 

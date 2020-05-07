@@ -74,11 +74,21 @@ TEST_CASE("Point Tests")
 			FAIL();
 		}
 	}
-	SECTION("Test Negative Line Input")
+	SECTION("Test Negative Input")
 	{
-		Line l1(1,2,3,4);
+
 		REQUIRE_THROWS(Line(-1, 2, 3, 4));
+		REQUIRE_THROWS(Line(1, -2, 3, 4));
+		REQUIRE_THROWS(Line(1, 2, -3, 4));
+		REQUIRE_THROWS(Line(-1, 2, 3, -4));
+	}
+
+	SECTION("Test string Output")
+	{
+		Line l1(1, 2, 3, 4);
 		REQUIRE(l1.LineToString() == "Point 1: [X: 1.000000, Y: 2.000000], Point 2: [X: 3.000000, Y: 4.000000]");
+	//	Line l2(3, 4, 1, 2);
+	//	REQUIRE(l2.LineToString() == "Point 1: [X: 1.000000, Y: 2.000000], Point 2: [X: 3.000000, Y: 4.000000]");
 	}
 	SECTION("Test line.length()")
 	{
